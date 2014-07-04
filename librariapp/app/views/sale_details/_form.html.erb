@@ -1,0 +1,38 @@
+<%= form_for @sale_detail, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :sale_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sale_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :product_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :product_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :preciounitario, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :preciounitario, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :cantidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cantidad, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :importe, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :importe, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sale_details_path, :class => 'btn' %>
+  </div>
+<% end %>

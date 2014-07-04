@@ -1,0 +1,38 @@
+<%= form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :fechaPedido, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechaPedido, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fechaEntrega, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechaEntrega, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fechaEntregado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fechaEntregado, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :importetotal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :importetotal, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                orders_path, :class => 'btn' %>
+  </div>
+<% end %>

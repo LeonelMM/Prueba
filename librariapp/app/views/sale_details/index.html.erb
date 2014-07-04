@@ -1,0 +1,44 @@
+<%- model_class = SaleDetail -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:sale_id) %></th>
+      <th><%= model_class.human_attribute_name(:product_id) %></th>
+      <th><%= model_class.human_attribute_name(:preciounitario) %></th>
+      <th><%= model_class.human_attribute_name(:cantidad) %></th>
+      <th><%= model_class.human_attribute_name(:importe) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sale_details.each do |sale_detail| %>
+      <tr>
+        <td><%= link_to sale_detail.id, sale_detail_path(sale_detail) %></td>
+        <td><%= sale_detail.sale_id %></td>
+        <td><%= sale_detail.product_id %></td>
+        <td><%= sale_detail.preciounitario %></td>
+        <td><%= sale_detail.cantidad %></td>
+        <td><%= sale_detail.importe %></td>
+        <td><%=l sale_detail.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_sale_detail_path(sale_detail), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      sale_detail_path(sale_detail),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sale_detail_path,
+            :class => 'btn btn-primary' %>

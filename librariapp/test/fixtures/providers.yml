@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Razonsocial: MyString
+  telefono: MyString
+  direccion: MyString
+  fecha: 2014-07-04
+  email: MyString
+  rfc: MyString
+
+two:
+  Razonsocial: MyString
+  telefono: MyString
+  direccion: MyString
+  fecha: 2014-07-04
+  email: MyString
+  rfc: MyString
